@@ -8,4 +8,6 @@ add_executable(C_project
         scratches/scratch.cpp
         Dataframe.h
         Dataframe.c
+        Dataframe.c
+        Dataframe.h
 )
