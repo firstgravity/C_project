@@ -4,4 +4,8 @@ project(C_project C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(C_project
-        main.c)
+        main.c
+        scratches/scratch.cpp
+        Dataframe.h
+        Dataframe.c
+)
