@@ -5,9 +5,8 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(C_project
         main.c
-        scratches/scratch.cpp
         Dataframe.h
         Dataframe.c
-        Dataframe.c
-        Dataframe.h
+        column.h
+        column.c
 )
