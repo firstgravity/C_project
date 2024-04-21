@@ -28,7 +28,7 @@ int insert_value(COLUMN *col, int value);
 * delete a value in the column
 * @param1 : Column pointer
 */
-void delete_column(COLUMN **col);
+void delete_column(COLUMN *col);
 
 /**
 * print the cell of the column
