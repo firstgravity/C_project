@@ -15,7 +15,7 @@ typedef struct {
 * @param1 : Column title
 * @return : the created column
 */
-COLUMN create_column(char *title);
+COLUMN *create_column(char *title);
 
 /**
 * insert a value in the column
