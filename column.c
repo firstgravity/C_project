@@ -38,3 +38,13 @@ int insert_value(COLUMN *col, int value){
     return 1;
 }
 
+void delete_column(COLUMN **col){
+    free(col);
+    col = NULL;
+}
+
+void print_col(COLUMN *col){
+    for (int i = 0; i<col->LS; i++){
+        printf("[%d]    %d\n", i, col->data[i]);
+    }
+}
