@@ -48,3 +48,13 @@ void print_col(COLUMN *col){
         printf("[%d]    %d\n", i, col->data[i]);
     }
 }
+
+int occ_val(COLUMN *col, int value){
+    int count = 0;
+    for(int i  = 0; i < col->LS; i++){
+        if (value == col->data[i]){
+            count++;
+        }
+    }
+    return count;
+}

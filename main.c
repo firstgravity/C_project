@@ -18,4 +18,5 @@ int main()
         }
     }
     print_col(mycol);
+    printf("%d", occ_val(mycol, 3));
 }
