@@ -58,3 +58,40 @@ int occ_val(COLUMN *col, int value){
     }
     return count;
 }
+
+int* pos_value(COLUMN *col, int rank){
+    if (rank<=col->LS) {
+        return col->data+rank;
+    }
+    return NULL;
+}
+
+int greater_val(COLUMN *col, int value){
+    int count = 0;
+    for(int i = 0; i<col->LS; i++){
+        if (col->data[i]>value){
+            count++;
+        }
+    }
+    return count;
+}
+
+int less_val(COLUMN *col, int value){
+    int count = 0;
+    for(int i = 0; i<col->LS; i++){
+        if (col->data[i]<value){
+            count++;
+        }
+    }
+    return count;
+}
+
+int equal_val(COLUMN *col, int value){
+    int count = 0;
+    for(int i  = 0; i < col->LS; i++){
+        if (value == col->data[i]){
+            count++;
+        }
+    }
+    return count;
+}

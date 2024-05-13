@@ -50,7 +50,7 @@ int occ_val(COLUMN *col, int value);
 * @param2 : the rank (integer)
 * @return : the value at position = rank
 */
-int pos_value(COLUMN *col, int rank);
+int* pos_value(COLUMN *col, int rank);
 
 /**
 * tell the number of value greater than value
