@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+Dataframe* create_Dataframe(){
+    Dataframe* new_dataframe = (Dataframe*)malloc(sizeof(Dataframe));
+    new_dataframe ->Data =NULL;
+    new_dataframe->PS = 0;
+    new_dataframe->LS = 0;
+    return new_dataframe;
+}
+
 void dis_dataframe(Dataframe *df) {
     if (df == NULL) return;
 

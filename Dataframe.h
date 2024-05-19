@@ -5,7 +5,6 @@
 
 #include "column.h"
 typedef struct{
-    char* Title;
     COLUMN* Data;
     int LS;
     int PS;
