@@ -23,6 +23,12 @@ void fill_Dataframe(Dataframe* Dataf){
     }
 }
 
+void hard_filling(Dataframe* Dataf){
+    for (int j = 0; j < Dataf->LS; j++){
+        for (int i = 0; i < Dataf->Data[j].LS; i++){
+            Dataf->Data[j].data[i] = 0;
+}
+
 void dis_dataframe(Dataframe *df) {
     if (df == NULL) return;
 
