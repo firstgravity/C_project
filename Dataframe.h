@@ -17,12 +17,6 @@ void fill_Dataframe(Dataframe** Dataf);
 
 void hard_filling(Dataframe** Dataf);
 
-void print_Dataframe(Dataframe** Dataf);
-
-void print_row_Dataframe(Dataframe** Dataf);
-
-void print_col_Dataframe(Dataframe** Dataf);
-
 void add_row(Dataframe** Dataf);
 
 void delete_row(Dataframe** Dataf);
