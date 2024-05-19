@@ -48,3 +48,10 @@ void dis_nb_val(Dataframe** Dataf);
 void dis_nb_greater_val(Dataframe** Dataf);
 
 void dis_nb_less_val(Dataframe** Dataf);
+
+void dis_dataframe(Dataframe *df);
+
+void dis_dataframe_rows(Dataframe *df, int limit);
+
+void dis_dataframe_col(Dataframe *df, int col_limit);
+
