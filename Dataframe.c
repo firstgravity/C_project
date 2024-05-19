@@ -10,6 +10,19 @@ Dataframe* create_Dataframe(){
     return new_dataframe;
 }
 
+void fill_Dataframe(Dataframe* Dataf){
+    int data = 0;
+    for (int j = 0; j < Dataf->LS; j++){
+        fflush(stdout);
+        printf("Enter the data of -%s-", Dataf->Data[j].Title);
+        for (int i = 0; i < Dataf->Data[j].LS; i++){
+            fflush(stdin);
+            scanf("%d", &data);
+            Dataf->Data[j].data[i] = data;
+        }
+    }
+}
+
 void dis_dataframe(Dataframe *df) {
     if (df == NULL) return;
 
