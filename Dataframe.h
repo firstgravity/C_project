@@ -3,27 +3,28 @@
 
 #endif //C_PROJECT_DATAFRAME_H
 
+#include "column.h"
 typedef struct{
     char* Title;
-    int** Data;
+    COLUMN* Data;
     int LS;
     int PS;
 }Dataframe;
 
 
-Dataframe** create_Dataframe();
+Dataframe* create_Dataframe();
 
-void fill_Dataframe(Dataframe** Dataf);
+void fill_Dataframe(Dataframe* Dataf);
 
-void hard_filling(Dataframe** Dataf);
+void hard_filling(Dataframe* Dataf);
 
-void add_row(Dataframe** Dataf);
+void add_row(Dataframe* Dataf);
 
-void delete_row(Dataframe** Dataf);
+void delete_row(Dataframe* Dataf);
 
-void add_col(Dataframe** Dataf);
+void add_col(Dataframe* Dataf);
 
-void delete_col(Dataframe** Dataf);
+void delete_col(Dataframe* Dataf);
 
 void rename_col(Dataframe** Dataf);
 

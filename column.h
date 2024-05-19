@@ -2,7 +2,6 @@
 #define C_PROJECT_COLUMN_H
 
 #endif //C_PROJECT_COLUMN_H
-
 typedef struct {
     char *Title;
     int PS;

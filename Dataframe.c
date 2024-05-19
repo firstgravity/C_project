@@ -1,5 +1,6 @@
 #include "Dataframe.h"
-#include "column.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 void dis_dataframe(Dataframe *df) {
     if (df == NULL) return;
@@ -7,7 +8,7 @@ void dis_dataframe(Dataframe *df) {
     printf("Dataframe:\n");
     for (int i = 0; i < df->LS; i++) {
         for (int j = 0; j < df->PS; j++) {
-            printf("%d ", df->Data[i][j]);
+            printf("%d ", df->Data[i].data[j]);
         }
         printf("\n");
     }
@@ -19,7 +20,7 @@ void dis_dataframe_rows(Dataframe *df, int limit) {
     printf("Dataframe (first %d rows):\n", limit);
     for (int i = 0; i < limit && i < df->LS; i++) {
         for (int j = 0; j < df->PS; j++) {
-            printf("%d ", df->Data[i][j]);
+            printf("%d ", df->Data[i].data[j]);
         }
         printf("\n");
     }
@@ -31,7 +32,7 @@ void dis_dataframe_col(Dataframe *df, int col_limit) {
     printf("Dataframe (first %d columns):\n", col_limit);
     for (int i = 0; i < df->LS; i++) {
         for (int j = 0; j < col_limit && j < df->PS; j++) {
-            printf("%d ", df->Data[i][j]);
+            printf("%d ", df->Data[i].data[j]);
         }
         printf("\n");
     }
