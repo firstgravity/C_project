@@ -5,7 +5,7 @@
 
 #include "column.h"
 typedef struct{
-    COLUMN* Data;
+    COLUMN** Data;
     int LS;
     int PS;
 }Dataframe;
