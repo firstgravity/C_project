@@ -116,3 +116,18 @@ void dis_nb_rows(Dataframe* Dataf){
 void dis_nb_col(Dataframe* Dataf){
     printf("The number of column is : %d\n", Dataf->LS);
 }
+
+void dis_name_co(Dataframe* Dataf, int x){
+    if (x==-1){
+        for (int i = 0; i < Dataf->LS; i++){
+            printf("[%d]: %s\t", i, Dataf->Data[i]->Title);
+        }
+        printf("\n");
+    }
+    else if( x <= Dataf->LS){
+        printf("The name of the column %d is : %s\n", x, Dataf->Data[x]->Title);
+    }
+    else{
+        printf("The column %d is not yet define !\n");
+    }
+}
