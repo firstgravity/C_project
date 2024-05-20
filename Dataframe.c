@@ -117,7 +117,7 @@ void dis_nb_col(Dataframe* Dataf){
     printf("The number of column is : %d\n", Dataf->LS);
 }
 
-void dis_name_co(Dataframe* Dataf, int x){
+void dis_name_col(Dataframe* Dataf, int x){
     if (x==-1){
         for (int i = 0; i < Dataf->LS; i++){
             printf("[%d]: %s\t", i, Dataf->Data[i]->Title);
