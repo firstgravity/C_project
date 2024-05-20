@@ -39,6 +39,8 @@ void dis_nb_col(Dataframe** Dataf);
 
 void dis_nb_val(Dataframe** Dataf);
 
+void dis_nb_equal_val(Dataframe* Dataf, int x);
+
 void dis_nb_greater_val(Dataframe* Dataf, int x);
 
 void dis_nb_less_val(Dataframe* Dataf, int x);
