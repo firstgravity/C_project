@@ -3,9 +3,9 @@
 
 #endif //C_PROJECT_DATAFRAME_H
 
-#include "column.h"
 typedef struct{
-    COLUMN** Data;
+    char* Title;
+    int** Data;
     int LS;
     int PS;
 }Dataframe;
@@ -25,11 +25,11 @@ void add_col(Dataframe* Dataf);
 
 void delete_col(Dataframe* Dataf);
 
-void rename_col(Dataframe** Dataf);
+void rename_col(Dataframe* Dataf);
 
-void search_val(Dataframe** Dataf);
+void search_val(Dataframe* Dataf);
 
-void replace_val(Dataframe** Dataf);
+void replace_val(Dataframe* Dataf);
 
 void dis_name_col(Dataframe* Dataf, int x);
 
@@ -47,7 +47,7 @@ void dis_nb_less_val(Dataframe* Dataf, int x);
 
 void dis_dataframe(Dataframe *df);
 
-void dis_dataframe_rows(Dataframe *df, int limit);
+void dis_dataframe_rows(Dataframe *df, int rows_limit);
 
 void dis_dataframe_col(Dataframe *df, int col_limit);
 
