@@ -90,7 +90,7 @@ void dis_nb_greater_val(Dataframe* Dataf, int  x){
             }
         }
     }
-    printf("The number of value greater than %d is : %d", x, count);
+    printf("The number of value greater than %d is : %d\n", x, count);
 }
 
 void dis_nb_equal_val(Dataframe* Dataf, int  x){
@@ -102,5 +102,15 @@ void dis_nb_equal_val(Dataframe* Dataf, int  x){
             }
         }
     }
-    printf("The number of value equal than %d is : %d", x, count);
+    printf("The number of value equal than %d is : %d\n", x, count);
+}
+
+void dis_nb_val(Dataframe* Dataf){
+    int count = 0;
+    for (int i = 0; i < Dataf->LS; i++){
+        for (int j = 0; j< Dataf->Data[i]->LS; j++){
+            count++;
+        }
+    }
+    printf("The number of value is : %d \n", count);
 }

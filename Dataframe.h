@@ -37,7 +37,7 @@ void dis_nb_rows(Dataframe** Dataf);
 
 void dis_nb_col(Dataframe** Dataf);
 
-void dis_nb_val(Dataframe** Dataf);
+void dis_nb_val(Dataframe* Dataf);
 
 void dis_nb_equal_val(Dataframe* Dataf, int x);
 
