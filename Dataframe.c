@@ -1,7 +1,4 @@
 #include "Dataframe.h"
-#include "column.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -48,11 +45,11 @@ void dis_dataframe(Dataframe *df) {
     }
 }
 
-void dis_dataframe_rows(Dataframe *df, int rows_limit) {
-    if (df == NULL || rows_limit <= 0) return;
+void dis_dataframe_rows(Dataframe *df, int limit) {
+    if (df == NULL || limit <= 0) return;
 
-    printf("Dataframe (first %d rows):\n", rows_limit);
-    for (int i = 0; i < rows_limit && i < df->LS; i++) {
+    printf("Dataframe (first %d rows):\n", limit);
+    for (int i = 0; i < limit && i < df->LS; i++) {
         for (int j = 0; j < df->PS; j++) {
             printf("%d ", df->Data[i]->data[j]);
         }
@@ -69,132 +66,6 @@ void dis_dataframe_col(Dataframe *df, int col_limit) {
             printf("%d ", df->Data[i]->data[j]);
         }
         printf("\n");
-    }
-}
-
-void add_row(Dataframe* Dataf) {
-    if (Dataf == NULL) return;
-    Dataf->LS++;
-    Dataf->Data = realloc(Dataf->Data, Dataf->LS * sizeof(int*));
-    Dataf->Data[Dataf->LS - 1] = malloc(Dataf->PS * sizeof(int));
-    printf("Enter values for the new row:\n");
-    for (int j = 0; j < Dataf->PS; j++) {
-        scanf("%d", &Dataf->Data[Dataf->LS - 1][j]);
-    }
-}
-
-void delete_row(Dataframe* Dataf) {
-    if (Dataf == NULL || Dataf->LS == 0) return;
-
-    int row;
-    printf("Enter the row number to delete: ");
-    scanf("%d", &row);
-
-    if (row < 0 || row >= Dataf->LS) return;
-    free(Dataf->Data[row]);
-    for (int i = row; i < Dataf->LS - 1; i++) {
-        Dataf->Data[i] = Dataf->Data[i + 1];
-    }
-    Dataf->LS--;
-    Dataf->Data = realloc(Dataf->Data, Dataf->LS * sizeof(int*));
-}
-
-
-void add_col(Dataframe* Dataf) {
-    if (Dataf == NULL) return;
-    Dataf->PS++;
-    for (int i = 0; i < Dataf->LS; i++) {
-        Dataf->Data[i] = realloc(Dataf->Data[i], Dataf->PS * sizeof(int));
-    }
-    printf("Enter values for the new column:\n");
-    for (int i = 0; i < Dataf->LS; i++) {
-        scanf("%d", &Dataf->Data[i][Dataf->PS - 1]);
-    }
-}
-
-
-void delete_col(Dataframe* Dataf) {
-    if (Dataf == NULL || Dataf->PS == 0) return;
-    int col;
-    printf("Enter the column number to delete: ");
-    scanf("%d", &col);
-    if (col < 0 || col >= Dataf->PS) return;
-    for (int i = 0; i < Dataf->LS; i++) {
-        for (int j = col; j < Dataf->PS - 1; j++) {
-            Dataf->Data[i][j] = Dataf->Data[i][j + 1];
-        }
-        Dataf->Data[i] = realloc(Dataf->Data[i], (Dataf->PS - 1) * sizeof(int));
-    }
-    Dataf->PS--;
-}
-
-#include <stdio.h>
-
-void rename_col(Dataframe* Dataf) {
-    if (Dataf == NULL) {
-        printf("Dataframe is NULL.\n");
-        return;
-    }
-    char new_title[100];
-    printf("Enter the new title for the dataframe: ");
-    scanf("%99s", new_title);
-    int new_title_length = 0;
-    while (new_title[new_title_length] != '\0' && new_title_length < 100) {
-        new_title_length++;
-    }
-    Dataf->Title = (char*)realloc(Dataf->Title, (new_title_length + 1) * sizeof(char));
-    int i;
-    for (i = 0; i < new_title_length; i++) {
-        Dataf->Title[i] = new_title[i];
-    }
-    Dataf->Title[i] = '\0';
-    printf("Dataframe renamed to %s\n", Dataf->Title);
-}
-
-void search_val(Dataframe* Dataf) {
-    int value;
-    int found = 0;
-    if (Dataf == NULL) {
-        printf("Dataframe is NULL.\n");
-        return;
-    }
-    printf("Enter the value to search for: ");
-    scanf("%d", &value);
-    for (int i = 0; i < Dataf->LS; i++) {
-        for (int j = 0; j < Dataf->PS; j++) {
-            if (Dataf->Data[i][j] == value) {
-                printf("Value %d found at row %d, column %d\n", value, i, j);
-                found = 1;
-            }
-        }
-    }
-    if (!found) {
-        printf("Value %d not found in the dataframe.\n", value);
-    }
-}
-
-void replace_val(Dataframe* Dataf) {
-    int old_value, new_value;
-    int replaced = 0;
-    if (Dataf == NULL) {
-        printf("Dataframe is NULL.\n");
-        return;
-    }
-    printf("Enter the value to replace: ");
-    scanf("%d", &old_value);
-    printf("Enter the new value: ");
-    scanf("%d", &new_value);
-    for (int i = 0; i < Dataf->LS; i++) {
-        for (int j = 0; j < Dataf->PS; j++) {
-            if (Dataf->Data[i][j] == old_value) {
-                Dataf->Data[i][j] = new_value;
-                printf("Replaced value %d with %d at row %d, column %d\n", old_value, new_value, i, j);
-                replaced = 1;
-            }
-        }
-    }
-    if (!replaced) {
-        printf("Value %d not found in the dataframe.\n", old_value);
     }
 }
 
