@@ -25,11 +25,11 @@ void add_col(Dataframe* Dataf);
 
 void delete_col(Dataframe* Dataf);
 
-void rename_col(Dataframe** Dataf);
+void rename_col(Dataframe* Dataf);
 
-void search_val(Dataframe** Dataf);
+void search_val(Dataframe* Dataf);
 
-void replace_val(Dataframe** Dataf);
+void replace_val(Dataframe* Dataf);
 
 void dis_name_col(Dataframe* Dataf, int x);
 
