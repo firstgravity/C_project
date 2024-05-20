@@ -103,14 +103,13 @@ void delete_row(Dataframe* Dataf) {
 
 
 void add_col(Dataframe* Dataf) {
-    if (Dataf == NULL) return;
-    Dataf->PS++;
-    for (int i = 0; i < Dataf->LS; i++) {
-        Dataf->Data[i] = realloc(Dataf->Data[i], Dataf->PS * sizeof(int));
-    }
+    printf("Enter the name of the new col : ");
+    char str[32];
+    scanf("%s", str);
+    create_column(str);
     printf("Enter values for the new column:\n");
     for (int i = 0; i < Dataf->LS; i++) {
-        scanf("%d", &Dataf->Data[i][Dataf->PS - 1]);
+        scanf("%d", &Dataf->Data[Dataf->LS]->data[i]);
     }
 }
 
