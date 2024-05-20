@@ -108,3 +108,7 @@ void dis_nb_equal_val(Dataframe* Dataf, int  x){
 void dis_nb_val(Dataframe* Dataf){
     printf("The number of value is : %d \n", Dataf->LS * Dataf->Data[0]->LS);
 }
+
+void dis_nb_rows(Dataframe* Dataf){
+    printf("The number of rows is : %d", Dataf->Data[0]->LS);
+}
