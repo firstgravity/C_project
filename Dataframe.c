@@ -78,5 +78,17 @@ void dis_nb_less_val(Dataframe* Dataf, int  x){
             }
         }
     }
-    printf("The number of value less than %d is : %d", x, count);
+    printf("The number of value less than %d is : %d\n", x, count);
+}
+
+void dis_nb_greater_val(Dataframe* Dataf, int  x){
+    int count = 0;
+    for (int i = 0; i < Dataf->LS; i++){
+        for (int j = 0; j< Dataf->Data[i]->LS; j++){
+            if (Dataf->Data[i]->data[j] > x) {
+                count++;
+            }
+        }
+    }
+    printf("The number of value greater than %d is : %d", x, count);
 }
