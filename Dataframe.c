@@ -110,5 +110,9 @@ void dis_nb_val(Dataframe* Dataf){
 }
 
 void dis_nb_rows(Dataframe* Dataf){
-    printf("The number of rows is : %d", Dataf->Data[0]->LS);
+    printf("The number of rows is : %d\n", Dataf->Data[0]->LS);
+}
+
+void dis_nb_col(Dataframe* Dataf){
+    printf("The number of column is : %d\n", Dataf->LS);
 }
