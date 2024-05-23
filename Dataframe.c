@@ -75,7 +75,12 @@ void add_row(Dataframe* Dataf) {
     if (Dataf->Data == NULL){
         return;
     }
-    for(int i = 0)
+    int value;
+    for(int i = 0; i < Dataf->LS; i++){
+        printf("Enter the value for the new row of the column %d : ", i);
+        scanf("%d", &value);
+        Dataf->Data[i]->data[0] = value;
+    }
 }
 
 void delete_row(Dataframe* Dataf) {
