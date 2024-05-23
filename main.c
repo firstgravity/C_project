@@ -3,6 +3,7 @@
 #include "Dataframe.h"
 
 void showMenu() {
+    printf("--------------------------");
     printf("Choose an option:\n");
     printf("1. Create Dataframe\n");
     printf("2. Fill Dataframe\n");
@@ -26,6 +27,7 @@ void showMenu() {
     printf("20. Display Dataframe Columns\n");
     printf("21. Free Dataframe\n");
     printf("22. Exit\n");
+    printf("--------------------------");
 }
 
 int main() {

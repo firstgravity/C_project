@@ -14,8 +14,9 @@ void fill_Dataframe(Dataframe* Dataf){
     int data = 0, value = 0;
     printf("Enter the number of data : ");
     scanf("%d", &value);
+    printf("\n%s\n", Dataf->Data[0]->Title);
     for (int j = 0; j < Dataf->LS; j++){
-        fflush(stdout);
+        printf("\n%d\n", j);
         printf("Enter the data of -%s-", Dataf->Data[j]->Title);
         for (int i = 0; i < value; i++){
             fflush(stdin);
@@ -26,7 +27,7 @@ void fill_Dataframe(Dataframe* Dataf){
 }
 
 void hard_filling(Dataframe* Dataf){
-    for (int j = 0; j < Dataf->PS; j++){
+    for (int j = 0; j < Dataf->LS; j++){
         for (int i = 0; i < Dataf->Data[j]->PS; i++) {
             Dataf->Data[j]->data[i] = 0;
         }
@@ -70,16 +71,8 @@ void dis_dataframe_col(Dataframe *df, int col_limit) {
 }
 
 void add_row(Dataframe* Dataf) {
-    if (Dataf == NULL) return;
-    Dataf->LS++;
-    Dataf->Data = realloc(Dataf->Data, Dataf->LS * sizeof(int*));
-    Dataf->Data[Dataf->LS - 1] = malloc(Dataf->PS * sizeof(int));
-    printf("Enter values for the new row:\n");
-    for (int j = 0; j < Dataf->PS; j++) {
-        scanf("%d", &Dataf->Data[Dataf->LS - 1][j]);
-    }
-}
 
+}
 
 void delete_row(Dataframe* Dataf) {
     if (Dataf == NULL || Dataf->LS == 0) return;
@@ -99,22 +92,16 @@ void delete_row(Dataframe* Dataf) {
     Dataf->Data = realloc(Dataf->Data, Dataf->LS * sizeof(int*));
 }
 
-
-
-
 void add_col(Dataframe* Dataf) {
     printf("Enter the name of the new col : ");
     char str[32];
     scanf("%s", str);
-    create_column(str);
-    printf("Enter values for the new column:\n");
-    for (int i = 0; i < Dataf->LS; i++) {
-        scanf("%d", &Dataf->Data[Dataf->LS]->data[i]);
+    if (Dataf->Data == NULL){
+        Dataf->Data = (COLUMN**) malloc(sizeof(COLUMN*)*256);
     }
+    Dataf->Data[Dataf->LS] = create_column(str);
+    Dataf->LS += 1;
 }
-
-
-
 
 void delete_col(Dataframe* Dataf) {
     if (Dataf == NULL || Dataf->PS == 0) return;
@@ -130,10 +117,6 @@ void delete_col(Dataframe* Dataf) {
     }
     Dataf->PS--;
 }
-
-
-#include <stdio.h>
-
 
 void rename_col(Dataframe* Dataf) {
     int col;
@@ -163,7 +146,6 @@ void rename_col(Dataframe* Dataf) {
     printf("Column %d renamed to %s\n", col, Dataf->Data[col]->Title);
 }
 
-
 void search_val(Dataframe* Dataf) {
     int value;
     int found = 0;
@@ -185,7 +167,6 @@ void search_val(Dataframe* Dataf) {
         printf("Value %d not found in the dataframe.\n", value);
     }
 }
-
 
 void replace_val(Dataframe* Dataf) {
     int old_value, new_value;
@@ -211,7 +192,6 @@ void replace_val(Dataframe* Dataf) {
         printf("Value %d not found in the dataframe.\n", old_value);
     }
 }
-
 
 void dis_nb_less_val(Dataframe* Dataf, int  x){
     int count = 0;
