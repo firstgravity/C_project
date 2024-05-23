@@ -14,10 +14,9 @@ void fill_Dataframe(Dataframe* Dataf){
     int data = 0, value = 0;
     printf("Enter the number of data : ");
     scanf("%d", &value);
-    printf("\n%s\n", Dataf->Data[0]->Title);
     for (int j = 0; j < Dataf->LS; j++){
         printf("\n%d\n", j);
-        printf("Enter the data of -%s-", Dataf->Data[j]->Title);
+        printf("Enter the data of -%d- column : ", j);
         for (int i = 0; i < value; i++){
             fflush(stdin);
             scanf("%d", &data);
@@ -34,13 +33,14 @@ void hard_filling(Dataframe* Dataf){
     }
 }
 
-void dis_dataframe(Dataframe *df) {
+void dis_dataframe(Dataframe **df) {
     if (df == NULL) return;
 
     printf("Dataframe:\n");
-    for (int i = 0; i < df->LS; i++) {
-        for (int j = 0; j < df->PS; j++) {
-            printf("%d ", df->Data[i]->data[j]);
+    printf("%s\n", (*df)->Data[0]->Title);
+    for (int i = 0; i < (*df)->LS; i++) {
+        for (int j = 0; j < (*df)->PS; j++) {
+            printf("%d ", (*df)->Data[i]->data[j]);
         }
         printf("\n");
     }

@@ -191,7 +191,7 @@ int main() {
                 if (df == NULL) {
                     printf("Create a Dataframe first.\n");
                 } else {
-                    dis_dataframe(df);
+                    dis_dataframe(&df);
                 }
                 break;
             case 19:

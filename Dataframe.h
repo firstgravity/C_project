@@ -45,7 +45,7 @@ void dis_nb_greater_val(Dataframe* Dataf, int x);
 
 void dis_nb_less_val(Dataframe* Dataf, int x);
 
-void dis_dataframe(Dataframe *df);
+void dis_dataframe(Dataframe **df);
 
 void dis_dataframe_rows(Dataframe *df, int limit);
 
