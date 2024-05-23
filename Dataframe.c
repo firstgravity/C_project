@@ -198,9 +198,9 @@ void search_val(Dataframe* Dataf) {
     printf("Enter the value to search for: ");
     scanf("%d", &value);
     for (int i = 0; i < Dataf->LS; i++) {
-        for (int j = 0; j < Dataf->PS; j++) {
-            if (Dataf->Data[j]->data[i] == value) {
-                printf("Value %d found at row %d, column %d\n", value, i + 1, j + 1);
+        for (int j = 0; j < Dataf->Data[0]->LS; j++) {
+            if (Dataf->Data[i]->data[j] == value) {
+                printf("Value %d found at column %d, row %d\n", value, i + 1, j);
                 found = 1;
             }
         }
@@ -225,9 +225,9 @@ void replace_val(Dataframe* Dataf) {
     printf("Enter the new value: ");
     scanf("%d", &new_value);
     for (int i = 0; i < Dataf->LS; i++) {
-        for (int j = 0; j < Dataf->PS; j++) {
-            if (Dataf->Data[j]->data[i] == old_value) {
-                Dataf->Data[j]->data[i] = new_value;
+        for (int j = 0; j < Dataf->Data[0]->LS; j++) {
+            if (Dataf->Data[i]->data[j] == old_value) {
+                Dataf->Data[i]->data[j] = new_value;
                 printf("Replaced value %d with %d at row %d, column %d\n", old_value, new_value, i + 1, j + 1);
                 replaced = 1;
             }

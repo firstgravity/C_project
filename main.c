@@ -117,6 +117,14 @@ int main() {
                 if (df == NULL) {
                     printf("Create a Dataframe first.\n");
                 } else {
+                    printf("\nDataframe:\n");
+                    printf("    ");
+                    for(int i = 0; i < 3; i++){
+                        printf("%11s|", titre[i]);
+                    }
+                    printf("\n");
+                    dis_dataframe(&df);
+                    printf("\n");
                     search_val(df);
                 }
                 break;
