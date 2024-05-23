@@ -3,6 +3,9 @@
 #include <stdio.h>
 
 Dataframe* create_Dataframe(){
+    /*
+     * create a cdataframe
+     */
     Dataframe* new_dataframe = (Dataframe*)malloc(sizeof(Dataframe));
     new_dataframe ->Data =NULL;
     new_dataframe->PS = 0;
@@ -11,6 +14,9 @@ Dataframe* create_Dataframe(){
 }
 
 void fill_Dataframe(Dataframe* Dataf){
+    /*
+     * the function fill a dataframe with column already done
+     */
     int data = 0, value = 0;
     printf("Enter the number of data : ");
     scanf("%d", &value);
@@ -26,6 +32,9 @@ void fill_Dataframe(Dataframe* Dataf){
 }
 
 void hard_filling(Dataframe* Dataf){
+    /*
+     * The function hard fill the cdataframe with 0
+     */
     int value;
     printf("Enter the number of data : ");
     scanf("%d", &value);
@@ -37,6 +46,9 @@ void hard_filling(Dataframe* Dataf){
 }
 
 void dis_dataframe(Dataframe **df){
+    /*
+     * it display the cdataframe int the form of name/ value
+     */
     if (df == NULL) return;
     for (int i = 0; i < (*df)->Data[0]->LS; i++) {
         printf("[%d] ", i);
@@ -48,6 +60,9 @@ void dis_dataframe(Dataframe **df){
 }
 
 void dis_dataframe_rows(Dataframe *df, int limit) {
+    /*
+     * display a row in the dataframe
+     */
     if (df == NULL || limit <= 0) return;
 
     printf("Dataframe (first %d rows):\n", limit);
@@ -60,6 +75,9 @@ void dis_dataframe_rows(Dataframe *df, int limit) {
 }
 
 void dis_dataframe_col(Dataframe *df, int col_limit) {
+    /*
+     * display a column.
+     */
     if (df == NULL || col_limit <= 0) return;
 
     printf("Dataframe (first %d columns):\n", col_limit);
@@ -72,6 +90,9 @@ void dis_dataframe_col(Dataframe *df, int col_limit) {
 }
 
 void add_row(Dataframe* Dataf) {
+    /*
+    * add a row to the cdataframe
+    */
     if (Dataf->Data == NULL){
         return;
     }
@@ -84,6 +105,9 @@ void add_row(Dataframe* Dataf) {
 }
 
 void delete_row(Dataframe* Dataf) {
+    /*
+     * delete a row of the cdataframe
+     */
     if (Dataf == NULL || Dataf->LS == 0) return;
 
 
@@ -102,6 +126,9 @@ void delete_row(Dataframe* Dataf) {
 }
 
 void add_col(Dataframe* Dataf) {
+    /*
+     * add a column in the cdataframe
+     */
     printf("Enter the name of the new col : ");
     char str[32];
     scanf("%s", str);
@@ -128,6 +155,9 @@ void delete_col(Dataframe* Dataf) {
 }
 
 void rename_col(Dataframe* Dataf) {
+    /*
+     * rename a colum of the cdataframe
+     */
     int col;
     char new_title[100];
     int new_title_length = 0;
@@ -156,6 +186,9 @@ void rename_col(Dataframe* Dataf) {
 }
 
 void search_val(Dataframe* Dataf) {
+    /*
+     * search a value in the cdataframe
+     */
     int value;
     int found = 0;
     if (Dataf == NULL) {
@@ -178,6 +211,9 @@ void search_val(Dataframe* Dataf) {
 }
 
 void replace_val(Dataframe* Dataf) {
+    /*
+     * replace a cell of the cdataframe
+     */
     int old_value, new_value;
     int replaced = 0;
     if (Dataf == NULL) {
@@ -203,6 +239,9 @@ void replace_val(Dataframe* Dataf) {
 }
 
 void dis_nb_less_val(Dataframe* Dataf, int  x){
+    /*
+     * display the number of value less than the input
+     */
     int count = 0;
     for (int i = 0; i < Dataf->LS; i++){
         for (int j = 0; j< Dataf->Data[i]->LS; j++){
@@ -215,6 +254,9 @@ void dis_nb_less_val(Dataframe* Dataf, int  x){
 }
 
 void dis_nb_greater_val(Dataframe* Dataf, int  x){
+    /*
+     * number of value greater than the input in the cdataframe
+     */
     int count = 0;
     for (int i = 0; i < Dataf->LS; i++){
         for (int j = 0; j< Dataf->Data[i]->LS; j++){
