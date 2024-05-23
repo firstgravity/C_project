@@ -26,21 +26,22 @@ void fill_Dataframe(Dataframe* Dataf){
 }
 
 void hard_filling(Dataframe* Dataf){
+    int value;
+    printf("Enter the number of data : ");
+    scanf("%d", &value);
     for (int j = 0; j < Dataf->LS; j++){
-        for (int i = 0; i < Dataf->Data[j]->PS; i++) {
-            Dataf->Data[j]->data[i] = 0;
+        for (int i = 0; i < value; i++) {
+            insert_value(Dataf->Data[j], 0);
         }
     }
 }
 
-void dis_dataframe(Dataframe **df) {
+void dis_dataframe(Dataframe **df){
     if (df == NULL) return;
-
-    printf("Dataframe:\n");
-    printf("%s\n", (*df)->Data[0]->Title);
-    for (int i = 0; i < (*df)->LS; i++) {
-        for (int j = 0; j < (*df)->PS; j++) {
-            printf("%d ", (*df)->Data[i]->data[j]);
+    for (int i = 0; i < (*df)->Data[0]->LS; i++) {
+        printf("[%d] ", i);
+        for (int j = 0; j < (*df)->LS; j++) {
+            printf("%10d |", (*df)->Data[j]->data[i]);
         }
         printf("\n");
     }
@@ -71,7 +72,10 @@ void dis_dataframe_col(Dataframe *df, int col_limit) {
 }
 
 void add_row(Dataframe* Dataf) {
-
+    if (Dataf->Data == NULL){
+        return;
+    }
+    for(int i = 0)
 }
 
 void delete_row(Dataframe* Dataf) {

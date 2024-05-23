@@ -31,9 +31,10 @@ void showMenu() {
 }
 
 int main() {
-    int choice;
+    int choice, ls =0;
     int running = 1;
     Dataframe *df = NULL;
+    char *titre[] = {"column1", "column2", "column3"};
 
     while (running) {
         showMenu();
@@ -191,6 +192,12 @@ int main() {
                 if (df == NULL) {
                     printf("Create a Dataframe first.\n");
                 } else {
+                    printf("\nDataframe:\n");
+                    printf("    ");
+                    for(int i = 0; i < 3; i++){
+                        printf("%11s|", titre[i]);
+                    }
+                    printf("\n");
                     dis_dataframe(&df);
                 }
                 break;
